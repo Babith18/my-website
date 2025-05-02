@@ -1,93 +1,173 @@
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
-  
-  body {
-    font-family: 'Poppins', sans-serif;
-    line-height: 1.6;
-    background: #f4f4f4;
-    color: #333;
-  }
-  
-  header {
-    background: #333;
-    color: #fff;
-    padding: 2rem 0;
-    text-align: center;
-  }
-  
+html {
+  scroll-padding-top: 100px; /* Adjust to match or slightly exceed your header height */
+  scroll-behavior: smooth;
+ }
+
+ body {
+  font-family: Arial, sans-serif;
+  margin: 0;
+  padding: 0;
+  line-height: 1.6;
+  background: #0c1038;
+  color: #333;
+}
+
+ header {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  background-color: rgb(1, 1, 68);
+  color: white;
+  padding: 15px 20px;
+  display: flex;
+  justify-content: flex-start;
+  /* justify-content: space-between; */
+  align-items: center;
+  flex-wrap: wrap;
+  z-index: 1000;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  box-sizing: border-box;
+}
+
+
+
+header h1 {
+  margin: 0;
+  font-size: 24px;
+}
+
+/* nav {
+  display: flex;
+  gap: 20px;
+  align-items: center;
+  } */
+
   nav {
-    background: #555;
-    padding: 1rem;
-    text-align: center;
-  }
-  
-  nav ul {
-    list-style: none;
-  }
-  
-  nav ul li {
-    display: inline;
-    margin: 0 1rem;
-  }
-  
-  nav ul li a {
-    color: white;
-    text-decoration: none;
-    font-weight: bold;
-  }
-  
-  section {
-    padding: 2rem;
-    max-width: 800px;
-    margin: auto;
-  }
-  
-  .project-list {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 1rem;
-  }
-  
-  .project {
-    background: white;
-    padding: 1rem;
-    border-radius: 8px;
-    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  }
-  
-  form {
     display: flex;
-    flex-direction: column;
+    flex-wrap: wrap;
+    gap: 20px;
+    align-items: center;
+    justify-content: flex-end;
+    flex: 1;
   }
-  
-  form input, form textarea {
-    margin-bottom: 1rem;
-    padding: 0.5rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+
+
+nav a,
+.dropdown-btn {
+  color: white;
+  text-decoration: none;
+  padding: 8px 12px;
+  background: none;
+  border: none;
+  font-size: 16px;
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+}
+
+nav a:hover,
+.dropdown-btn:hover {
+  background-color: #333;
+  border-radius: 4px;
+}
+
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.dropdown-content {
+  display: none;
+  position: absolute;
+  top: 100%;
+  background-color: #050044;
+  min-width: 160px;
+  box-shadow: 0px 4px 8px rgba(0,0,0,0.2);
+  z-index: 1;
+  border-radius: 5px;
+  /* right: 0;
+  left: auto; */
+  left: 0; /* Change from 'left: auto' to 'left: 0' */
+  right: auto;
+
+}
+
+.dropdown-content a {
+  color: white;
+  padding: 10px 16px;
+  display: block;
+  text-decoration: none;
+}
+
+.dropdown-content a:hover {
+  background-color: #000000;
+}
+
+.dropdown:hover .dropdown-content {
+  display: block;
+}
+.dropbtn {
+  background: none;
+  border: none;
+  color: white;
+  font-size: 22px;
+  cursor: pointer;
+}
+
+i {
+  margin-right: 8px;
+}
+
+main {
+  padding: 2rem;
+}
+
+section {
+  /* margin-bottom: 2rem;
+  background: #fff; */
+  padding: 1rem;  /* Default padding */
+  border-radius: 10px;
+  box-shadow: 0 8px 4px rgba(0, 0, 0, 0.1);
+}
+
+@media (max-width: 768px) {
+  section {
+    padding: 1.5rem;  /* Increase padding for mobile to avoid cramping */
   }
-  
-  form button {
-    padding: 0.7rem;
-    border: none;
-    background: #333;
-    color: white;
-    cursor: pointer;
-    transition: background 0.3s;
+}
+
+@media (max-width: 480px) {
+  section {
+    padding: 1rem;  /* Reduce padding for very small screens */
+    margin-bottom: 1.5rem;  /* Less margin at the bottom for smaller screens */
   }
-  
-  form button:hover {
-    background: #555;
-  }
-  
-  footer {
-    background: #333;
-    color: white;
-    text-align: center;
-    padding: 1rem;
-    margin-top: 2rem;
-  }
-  
+}
+
+
+footer {
+  background:  #050044;
+  color: #fff;
+  text-align: center;
+  padding: 1rem;
+  position: relative;
+  bottom: 0;
+  width: 100%;
+}
+.center-text {
+  text-align: center;
+}
+
+#main_page {
+color: #000000;
+padding: 80px 2rem 2rem;
+background-color: #ffffff;
+}
+
+#intro video {
+  width: 100%;
+  height: auto;
+  max-height: 500px;
+  object-fit: cover;
+  border-radius: 8px;
+}
